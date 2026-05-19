@@ -1,43 +1,64 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tic-Tac-Toe / Jogo da Velha</title>
+    <link rel="stylesheet" href="./assets/css/style.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tic-Tac-Toe / Jogo da Velha</title>
-  <link rel="stylesheet" href="./assets/css/style.css">
-</head>
+  <body>
+    <div class="container">
+      <h1>Tic-Tac-Toe / Jogo da Velha</h1>
+      <hr />
 
-<body>
-  <div class="container">
-    <h1>Tic-Tac-Toe / Jogo da Velha</h1>
-    <hr>
-    <br>
-    <div class="player-inputs">
-      <label for="player1">Nome Jogador "X"</label>
-      <input type="text" id="player1" placeholder="Digite o nome do jogador (X) ">
-      <br>
-      <label for="player2">Nome Jogador "O"</label>
-      <input type="text" id="player2" placeholder="Digite o nome do jogador (O) ">
-      <br>
-      <button class="btn-blue" onclick="startGame()">Iniciar Jogo</button>
-      <hr>
-    </div>
+      <div class="player-inputs">
+        <label for="player1">Nome Jogador "X"</label>
+        <input
+          type="text"
+          id="player1"
+          placeholder="Digite o nome do jogador (X)"
+        />
 
+        <label for="player2">Nome Jogador "O"</label>
+        <input
+          type="text"
+          id="player2"
+          placeholder="Digite o nome do jogador (O)"
+        />
 
-
-    <div class="game" id="game">
-      <h2 id="turnInfo"></h2>
-      <div class="board" id="board">
-       
+        <button class="btn-blue" id="startBtn" onclick="startGame()">
+          Iniciar Jogo
+        </button>
       </div>
-      <h3 id="result"></h3>
-      <button class="btn-add" onclick="resetGame()">Reiniciar</button>
+
+      <div class="game" id="game">
+        <h2 id="turnInfo"></h2>
+        <div class="board" id="board"></div>
+        <h3 id="result"></h3>
+
+        <div class="scoreboard">
+          <div class="score-item">
+            <span>Pontuação X:</span> <strong id="scoreX">0</strong>
+          </div>
+          <div class="score-item">
+            <span>Pontuação O:</span> <strong id="scoreO">0</strong>
+          </div>
+          <div class="score-item">
+            <span>Empates:</span> <strong id="scoreTie">0</strong>
+          </div>
+        </div>
+
+        <div class="controls">
+          <button class="btn-add" onclick="resetBoard()">
+            Reiniciar Tabuleiro
+          </button>
+          <button class="btn-gray" onclick="newGame()">Novo Jogo</button>
+        </div>
+      </div>
     </div>
 
-  </div>
-  <script src="./assets/js/index.js"></script>
-</body>
-
+    <script src="./assets/js/index.js"></script>
+  </body>
 </html>
